@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"mcluck-app","appId":"1:1037427663557:android:74abce6811566fca90c6ac","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"mcluck-app","configurations":{"android":"1:1037427663557:android:74abce6811566fca90c6ac","ios":"1:1037427663557:ios:83b00308eb8170bb90c6ac"}}}}}}

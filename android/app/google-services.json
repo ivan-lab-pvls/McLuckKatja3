@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1037427663557",
+    "project_id": "mcluck-app",
+    "storage_bucket": "mcluck-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037427663557:android:74abce6811566fca90c6ac",
+        "android_client_info": {
+          "package_name": "com.wickqa.game.utils"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWoS7dUAXccOzVrygGK3Jh1GI0joAcTtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
