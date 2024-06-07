@@ -63,6 +63,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1037427663557',
     projectId: 'mcluck-app',
     storageBucket: 'mcluck-app.appspot.com',
-    iosBundleId: 'com.wickqa.game.utils',
+    iosBundleId: 'com.kingsq.billy.app',
   );
 }

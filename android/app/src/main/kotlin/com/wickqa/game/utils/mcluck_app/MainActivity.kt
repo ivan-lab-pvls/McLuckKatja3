@@ -1,4 +1,4 @@
-package com.wickqa.game.utils
+package com.kingsq.billy.app
 
 import io.flutter.embedding.android.FlutterActivity
 

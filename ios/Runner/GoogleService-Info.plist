@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.wickqa.game.utils</string>
+	<string>com.kingsq.billy.app</string>
 	<key>PROJECT_ID</key>
 	<string>mcluck-app</string>
 	<key>STORAGE_BUCKET</key>
